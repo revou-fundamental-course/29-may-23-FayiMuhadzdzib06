@@ -6,9 +6,7 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
-body{
-    height: 200000px;
-}
+
 li {
     list-style: none;
 }
@@ -141,5 +139,15 @@ nav ul li:hover{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 3px solid rgba(0, 0, 0, .3);
+    background-size: cover;
+}
+.ourHead .wadah li:nth-child(1) .pp{
+    background-image: url('../img/img2.jpg');
+}
+.ourHead .wadah li:nth-child(2) .pp{
+    background-image: url('../img/img3.jpg');
+}
+.ourHead .wadah li:nth-child(3) .pp{
+    background-image: url('../img/img4.jpg');
 }
