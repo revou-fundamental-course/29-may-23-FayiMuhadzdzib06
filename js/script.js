@@ -1,8 +1,9 @@
 window.addEventListener('scroll', e => {
-    console.log(window.scrollY); 
-    if (window.scrollY > 200){
-        document.querySelector('nav').style.backgroundColor = 'salmon';
+    let home = document.getElementById('home');
+    console.log(home.clientHeight); 
+    if (window.scrollY > home.clientHeight - 80){
+        document.querySelector('nav').setAttribute('id', 'navScroll');
     }else{
-        document.querySelector('nav').style.backgroundColor = 'transparent';
+        document.querySelector('nav').removeAttribute('id', 'navScroll');
     }
 });
