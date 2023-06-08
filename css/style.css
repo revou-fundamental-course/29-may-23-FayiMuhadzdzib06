@@ -107,8 +107,9 @@ nav ul li:hover{
     border-radius: 50px;
     background-color: white;
     font-weight: bold;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 .layer .isi {
@@ -372,6 +373,7 @@ footer p span {
     nav .gambar {
         width: 40px;
         height: 40px;
+        margin-left: 0;
         background-size: 50px;
         background-position: -5px;
     }
@@ -390,7 +392,7 @@ footer p span {
         flex-direction: column;
         gap: 15px;
         height: max-content;
-        padding: 10px 0;
+        padding: 10px 0 20px;
         transition: top .5s;
         border-bottom: 1px solid rgba(255, 255, 255, .5);
         z-index: 1;
@@ -402,7 +404,7 @@ footer p span {
 
     /* My Profile */
     .layer .isi {
-        width: calc(100% - 100px);
+        width: calc(100% - 70px);
         height: max-content;
         gap: 15px;
         flex-direction: column;
@@ -439,6 +441,9 @@ footer p span {
     }
 
     /* home */
+    .home {
+        background-position: -90px 0;
+    }
     .home .content h1 {
         font-size: 30px;
         text-align: center;
@@ -476,8 +481,14 @@ footer p span {
         height: max-content;
         padding: 25px 0;
     }
+    .message .card .output {
+        -webkit-background-image: url('../img/img1.jpg');
+        background-image: url('../img/img1.jpg');
+        background-color: none;
+    }
     .message .card .output .card-output{
         height: max-content;
+        width: calc(100%  - 30px);
         padding-bottom: 15px;
     }
     .message .card .output .card-output .au{
