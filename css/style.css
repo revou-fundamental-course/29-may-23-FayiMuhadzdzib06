@@ -24,7 +24,7 @@ nav {
     padding: 0 20px;
     position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(255, 255, 255, .05);
     backdrop-filter: blur(20px);
 }
@@ -40,18 +40,24 @@ nav .gambar {
     object-fit: cover;
     cursor: pointer;
 }
+.fa-bars {
+    display: none;
+}
 nav ul {
     width: 600px;
     height: 100%;
     display: flex;
+    background-color: transparent;
     align-items: center;
     justify-content: space-evenly;
 }
-nav ul li {
+nav ul a {
     width: 130px;
+}
+nav ul li {
+    width: 100%;
     text-align: center;
     padding: 10px 0;
-    /* border: 1px solid rgba(255, 255, 255, .5); */
     border-radius: 5px;
     font-size: 15px;
     color: rgba(255, 255, 255, .5);
@@ -80,6 +86,86 @@ nav ul li:hover{
     color: white;
 }
 
+/* My Profile */
+.layer {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    display: none;
+}
+.layer .btn-close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border-radius: 50px;
+    background-color: white;
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+.layer .isi {
+    width: calc(100% - 700px);
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(11, 201, 103);
+}
+.layer .isi .foto {
+    width: 300px;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+.layer .isi .foto .pp {
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    border: 3px solid rgba(0, 0, 0, .5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+    background-image: url('../img/img6.jpg');
+    background-size: cover;
+    border-radius: 10px;
+}
+.layer .isi .teks {
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -10px 0 15px rgba(0, 0, 0, .2);
+    padding: 20px;
+}
+.layer .isi .teks h1{
+    padding-bottom: 20px;
+}
+.layer .isi .teks h1 span,
+.layer .isi .teks p span {
+    color: rgb(11, 201, 103);
+}
+.layer .isi .teks p {
+    color: rgba(0, 0, 0, .5);
+}
+.layer .isi .teks .sosmed{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+.layer .isi .teks .sosmed a{
+    color: black;
+}
+
+
 /* home */
 .home {
     width: 100%;
@@ -102,7 +188,7 @@ nav ul li:hover{
     color: white;
 }
 .home .content h1 span{
-    color: salmon;
+    color: rgb(0, 255, 123)
 }
 .home .content p{
     color: rgba(255, 255, 255, .5);
@@ -115,7 +201,8 @@ nav ul li:hover{
     background-color: #eee;
 }
 .ourHead h2 {
-    padding: 40px 0 0 50px;
+    padding: 40px 0 0;
+    text-align: center;
 }
 .ourHead .wadah{
     width: calc(100% - 100px);
@@ -150,4 +237,255 @@ nav ul li:hover{
 }
 .ourHead .wadah li:nth-child(3) .pp{
     background-image: url('../img/img4.jpg');
+}
+
+/* Message Us */
+.message {
+    width: 100%;
+    height: 550px;
+    background-color: rgb(2, 41, 21);
+    background: linear-gradient(to bottom right, rgb(11, 201, 103), rgb(2, 41, 21));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.message .card {
+    width: calc(100% - 300px);
+    height: calc(100% - 50px);
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 0 20px;
+    transform: scale(.95);
+}
+.message .card .input, .output {
+    width: 45%;
+    height: 100%;
+}
+.message .card .input h1 {
+    font-size: 1.7em;
+    padding: 20px 0 0;
+    text-align: center;
+}
+.message .card .input p{
+    padding: 0 0 5px 15px;
+    font-weight: bold;
+}
+.message .card .input input[type="text"], 
+.message .card .input input[type="date"]{
+    width: calc(100% - 30px);
+    height: 40px;
+    margin: 5px auto 15px;
+    display: block;
+    padding: 20px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgba(2, 41, 21, 0.438);
+}
+.message .card .input input[type="text"]:focus, 
+.message .card .input input[type="date"]:focus,
+.message .card .input .pesan:focus{
+    border: 2px solid rgb(2, 41, 21);
+    box-shadow: 0 0 15px rgba(0, 255, 123, 0.466);
+}
+.message .card .input input[type="radio"] {
+    margin: 0 0 20px 15px;
+}
+.message .card .input .pesan {
+    margin: 0 0 0 15px;
+    width: calc(100% - 30px);
+    height: 70px;
+    resize: none;
+}
+.message .card .input .btn {
+    width: calc(100% - 30px);
+    height: 40px;
+    border: none;
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px auto;
+    color: white;
+    background-color: rgb(11, 201, 103);
+    box-shadow: 0 10px 20px rgb(11, 201, 103, .3);
+}
+.message .card .output{
+    background-image: url('../img/img1.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: -10px 0 15px rgba(0, 0, 0, .2);
+    display: grid;
+    place-items: center;
+}
+.message .card .output .card-output {
+    width: calc(100% - 100px);
+    height: calc(100% - 70px);
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    padding: 0 20px;
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+.message .card .output .card-output h1 {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px 0;
+}
+.au {
+    text-align: center;
+    display: block;
+    padding-top: 120px;
+    color: rgba(255, 255, 255, .5);
+}
+.message .card .output .card-output p {
+    display: none;
+    padding: 10px 0 0;
+    color: rgba(255, 255, 255, .5);
+}
+.message .card .output .card-output p span {
+    color: white;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    height: 70px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer p span {
+    color: rgb(11, 201, 103);
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+    nav {
+        border-bottom: none;
+        background-color: rgba(0, 0, 0, .8);
+        backdrop-filter: none;
+    }
+    nav .gambar {
+        width: 40px;
+        height: 40px;
+        background-size: 50px;
+        background-position: -5px;
+    }
+    nav i.fa {
+        display: block;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+    }
+    nav ul {
+        position: absolute;
+        background-color: rgba(0, 0, 0, .8);
+        width: 100%;
+        top: -250px;
+        left: 0;
+        flex-direction: column;
+        gap: 15px;
+        height: max-content;
+        padding: 10px 0;
+        transition: top .5s;
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
+        z-index: 1;
+    }
+    nav ul a {
+        width: calc(100% - 30px);
+        margin: auto;
+    }
+
+    /* My Profile */
+    .layer .isi {
+        width: calc(100% - 100px);
+        height: max-content;
+        gap: 15px;
+        flex-direction: column;
+    }
+    .layer .isi .foto {
+        width: 100%;
+        height: 220px;
+    }
+    .layer .isi .foto .pp {
+        background-position: 0 -100px;
+    }
+    .layer .isi .teks {
+        width: 100%;
+        height: 320px;
+        padding: 20px 30px;
+        box-shadow: 0 -10px 15px rgba(0, 0, 0, .1);
+    }
+    .layer .isi .teks h1 {
+        font-size: 1.8em;
+    }
+    .layer .isi .teks p {
+        font-size: 15px;
+    }
+    .layer .isi .teks .sosmed{
+        width: max-content;
+        height: max-content;
+        display: flex;
+        gap: 25px;
+        margin-top: 30px;
+        font-size: 20px;
+    }
+    .layer .isi .teks .sosmed a{
+        color: black;
+    }
+
+    /* home */
+    .home .content h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+    .home .content p {
+        font-size: 15px;
+    }
+
+    /* our headquarter */
+    .ourHead {
+        height: max-content;
+        padding-bottom: 20px;
+    }
+    .ourHead .wadah {
+        flex-direction: column;
+        height: max-content;
+    }
+    .ourHead .wadah li {
+        width: 100%;
+        transform: scale(.9);
+    }
+
+    /* message us */
+    .message {
+        height: max-content;
+        padding-bottom: 20px;
+    }
+    .message .card {
+        width: calc(100% - 50px);
+        flex-direction: column;
+        padding: 0;
+    }
+    .message .card .input, .output {
+        width: 100%;
+        height: max-content;
+        padding: 25px 0;
+    }
+    .message .card .output .card-output{
+        height: max-content;
+        padding-bottom: 15px;
+    }
+    .message .card .output .card-output .au{
+        padding: 10px 0;
+    }
+
+    /* footer */
+    footer p{
+        font-size: 15px;
+    }
 }
